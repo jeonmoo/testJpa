@@ -1,19 +1,36 @@
 package com.example.studyJpa2.member;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
+//@RequiredArgsConstructor
 public class MemberService {
 
     @Autowired
-    public MemberRepository memberRepository;
+    private MemberRepository memberRepository;
 
-    public Optional<Member> login(Member member) {
-        Optional<Member> user = Optional.ofNullable(memberRepository.findByMemberWhereUserIdAndUserPass(member));
-        return user;
+    public List<Member> getMember() {
+        return memberRepository.findAll();
     }
+
+    public Optional<Member> getMemberById(Long id) {
+        return memberRepository.findById(id);
+    }
+
+    public Member getMemberById2(Long id) {
+        return memberRepository.findById2(id);
+    }
+
+
+    public List<Member> getMembers() {
+        return memberRepository.findAll();
+    }
+
+
 
 }

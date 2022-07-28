@@ -1,9 +1,6 @@
 package com.example.studyJpa2.member;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -25,9 +22,9 @@ public class Member {
     @Column(nullable = false)
     private String userPass;
 
-    @Setter
-    @Column(nullable = false)
-    private String name;
+//    @Setter
+//    @Column(name = "\"name\"", nullable = false)
+//    private String name;
 
     @Setter
     private int age;
@@ -39,7 +36,7 @@ public class Member {
     private String address;
 
     @Setter
-    private LocalDate birthDate;
+    private LocalDate birthdate;
 
     @Setter
     private String tel;
