@@ -1,6 +1,7 @@
 package com.example.studyJpa2.notice;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
@@ -16,17 +17,17 @@ public class Notice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long noticeId;
-    private String noticeType;
-    private String noticeTitle;
-    private String noticeContents;
-    private String noticeAttachedFile;
-    private Boolean isShow;
-    private Boolean isPopup;
+    @Setter private Long noticeId;
+    @Setter private String noticeTitle;
+    @Setter private String noticeType;
+    @Setter private String noticeContents;
+    @Setter private String noticeAttachedFile;
+    @Setter private Boolean isShow;
+    @Setter private Boolean isPopup;
 
-    private LocalDateTime createdAt;
-    private String createdBy;
-    private LocalDateTime modifiedAt;
-    private String modifiedBy;
+    @Setter private LocalDateTime createdAt;
+    @Setter private String createdBy;
+    @Setter private LocalDateTime modifiedAt;
+    @Setter private String modifiedBy;
 
 }
