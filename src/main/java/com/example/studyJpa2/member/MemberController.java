@@ -17,7 +17,7 @@ public class MemberController {
     MemberService memberService;
 
     @GetMapping("/getMember")
-    public Map<String, Object> getMember(@RequestParam Long id) {
+    public Map<String, Object> getMember(Long id) {
         Map<String, Object> mp = new HashMap<>();
         mp.put("code", "1");
 
@@ -33,6 +33,15 @@ public class MemberController {
         return mp;
     }
 
+    @GetMapping("/objectMember")
+    public Member returnMember(Long id) {
+        return memberService.getMemberById2(id);
+    }
+
+    @GetMapping("/objectOptinalMember")
+    public Optional<Member> returnOptionalMember(Long id) {
+        return memberService.getMemberById(id);
+    }
 
 
 }
